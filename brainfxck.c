@@ -51,6 +51,7 @@ void brainfxck(char code[])
         }
         i++;
     }
+    printf("\n");
 
     for (size_t i = 0; i < 10; i++)
     {
@@ -61,11 +62,26 @@ void brainfxck(char code[])
 
 int main(int argc, char *argv[])
 {
+    // if (argc < 3)
+    // {
+    //     fprintf(stderr, "%s", "error: Format should be ./brainfxck -f|-t [file|code]\n");
+    //     return 0;
+    // }
+    // printf("%s", argv[1]);
+    // if (argv[1] == "-f")
+    // {
+    //     printf("file operations");
+    // }
     if (argc <= 1)
     {
         fprintf(stderr, "%s", "error: argv[1] is NULL!\n");
         return 0;
     }
+    // else if (argc > 2)
+    // {
+    //     fprintf(stderr, "%s", "error: brainfxck code should be space free!\n");
+    //     return 0;
+    // }
 
     brainfxck(argv[1]);
 }
