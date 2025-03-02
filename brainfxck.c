@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-// #include <assert.h>
 
 void brainfxck(char code[])
 {
@@ -82,44 +81,15 @@ void brainfxck(char code[])
 
     printf("\n");
 }
+
 int main(int argc, char *argv[])
 {
 
-    // if (argc < 3)
-    // {
-    //     fprintf(stderr, "%s", "error: Format should be ./brainfxck -f|-t [file|code]\n");
-    //     return 0;
-    // }
-    // printf("%s", argv[1]);
-    if (argv[1] == "-f")
-    {
-        printf("file operations");
-    }
     if (argc <= 1)
     {
         fprintf(stderr, "%s", "error: argv[1] is NULL!\n");
         return 0;
     }
-
-    // else if (argc > 2)
-    // {
-    //     fprintf(stderr, "%s", "error: brainfxck code should be space free!\n");
-    //     return 0;
-    // }
-    // char buff[10000];
-    // FILE *fptr;
-
-    // if ((fptr = fopen("hello.bf", "r")) == NULL)
-    // {
-    //     printf("Error! opening file");
-
-    //     // Program exits if the file pointer returns NULL.
-    //     exit(1);
-    // }
-
-    // fgets(buff, 10000, fptr);
-    // printf("%s", buff);
-    // fclose(fptr);
 
     brainfxck(argv[1]);
 }
