@@ -87,7 +87,14 @@ int main(int argc, char *argv[])
 {
     if (argc <= 1)
     {
-        fprintf(stderr, "%s", "error: argv[1] is NULL!\n");
+        fprintf(stderr, "error: no Brainfuck code provided as argument!\n");
+        return 1;
+    }
+
+    size_t code_length = strlen(argv[1]);
+    if (code_length >= 65535)
+    {
+        fprintf(stderr, "error: input code too long (max %d characters)!\n", 65534);
         return 1;
     }
 
