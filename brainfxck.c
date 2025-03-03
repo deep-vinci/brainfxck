@@ -7,18 +7,20 @@ void brainfxck(char code[])
     int len = 65535;
     int pointer = 0, i = 0;
     char memoryMap[len];
-    memset(memoryMap, 0, len); // Initialize memory with zeros
+    memset(memoryMap, 0, len);
 
     while (i < strlen(code))
     {
         switch (code[i])
         {
         case '>':
-            pointer++;
+            if (pointer < len - 1)
+                pointer++;
             break;
 
         case '<':
-            pointer--;
+            if (pointer > 0)
+                pointer--;
             break;
 
         case '+':
@@ -76,7 +78,6 @@ void brainfxck(char code[])
     for (size_t i = 0; i < 10; i++)
     {
         printf("%d ", memoryMap[i]);
-        // putchar(memoryMap[i]);
     }
 
     printf("\n");
@@ -84,7 +85,6 @@ void brainfxck(char code[])
 
 int main(int argc, char *argv[])
 {
-
     if (argc <= 1)
     {
         fprintf(stderr, "%s", "error: argv[1] is NULL!\n");
