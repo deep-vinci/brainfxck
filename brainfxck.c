@@ -88,8 +88,9 @@ int main(int argc, char *argv[])
     if (argc <= 1)
     {
         fprintf(stderr, "%s", "error: argv[1] is NULL!\n");
-        return 0;
+        return 1;
     }
 
     brainfxck(argv[1]);
+    return 0;
 }
